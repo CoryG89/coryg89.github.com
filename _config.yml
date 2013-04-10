@@ -12,11 +12,10 @@ pygments: true
 title : Jekyll Bootstrap
 tagline: Site Tagline
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
-  feedburner : feedname
+  name : Cory Gross
+  email : cmg0030@tigermail.auburn.edu
+  github : CoryG89
+  twitter : CoryG89
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -26,7 +25,7 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://username.github.com
+production_url : http://coryg89.github.io
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -81,7 +80,7 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : disqus
+    provider : facebook
     disqus :
       short_name : jekyllbootstrap
     livefyre :
@@ -89,7 +88,7 @@ JB :
     intensedebate :
       account : 123abc
     facebook :
-      appid : 123
+      appid : 158922307606972
       num_posts: 5
       width: 580
       colorscheme: light
