@@ -1,15 +1,17 @@
 ---
-layout: page
-title: Hello World!
+layout: default
+title: DevBlog of Cory Gross
 ---
 {% include JB/setup %}
+
+# Hello World!
 
 My name is Cory Gross. I am a software developer graduating in December 2013
 from Auburn University. I am interested in building great software that people
 use, web and mobile development, games, and technology in general. I have a
-passion for open source and love learning to use new tools. This weblog is
-built using [**Jekyll Bootstrap**][1] and hosted for free on GitHub's open
-source platform.
+passion for open source and love learning to use new tools. This site is hosted
+for free on GitHub Pages and was built using [**Jekyll Bootstrap**][1] source
+platform.
     
     title : My Blog =)
     
@@ -27,6 +29,14 @@ This blog contains sample posts which help stage pages and blog data.
 When you don't need the samples anymore just delete the `_posts/core-samples` folder.
 
     $ rm -rf _posts/core-samples
+
+
+## Testing Pygments
+
+	function () {
+		return Math.cos(0.5) + Math.sin(0.3)
+	}
+
 
 Here's a sample "posts list".
 

@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Networking</title>
+    <meta name="description" content="">
+    <meta name="author" content="Cory Gross" />
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all" />
+    <link href="/assets/themes/twitter/css/highlightjs/github.css" rel="stylesheet" />
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Dev Blog of Cory Gross</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              
+              
+              
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Networking </h1>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+    <h1 id='reliable_data_transfer_protocols'>Reliable Data Transfer Protocols</h1>
+
+<h2 id='stop_and_wait_protocols'>Stop and Wait Protocols</h2>
+
+<p>A simplified reliable data transfer protocol outlined in the book <em>Computer Networking: A Top-Down Approach</em> by James Kurose and Keith Ross is a good example of a <strong>stop and wait protocol</strong>. They refer to the protocol simply as <code>rdt3.0</code>. Here is an image of the FSM for the sender routine.</p>
+
+<p><img alt='rdt3.0 sender' src='rdt3_sender_fsm.png' /></p>
+
+<p>The protocol involves the use of checksums, sequence numbers, a timer, as well as the use of both positive and negative acknowledgments. If a checksum is calculated differently at the receiver than it was recorded as at the sender, then a negative acknowledgment is returned. If the checksum matches then a positive acknowledgment is returned. If the packet does not arrive at all then no acknowledgment will be returned and the timer at the sender will timeout and the lost packet will be retransmitted. If an acknowledgment is lost then the timeout will also occur causing retransmission. The following image from the Kurose Ross book shows the four main scenarios illustrated by the following timing diagrams</p>
+
+<p><img alt='rdt3.0 timing diagrams' src='rdt3_timing_diagrams.png' /></p>
+
+<p>Only two different sequence numbers are used, 0 and 1, which are alternated between for each sucessful packet delivery. If you examine the above diagrams you will see why the sequence numbers are needed to keep up with which packet is which when a premature timeout expires but neither the packet nor the ACK has been lost. This introduces duplicate data packets in which case only the sequence numbers allow the protocol to handle correctly. Because of the alternating sequence numbers this type of protocol is also often referred to as an <strong>alternating-bit protocol</strong>.</p>
+
+<p>This protocol is called a <em>stop and wait</em> protocol because it only tries to have one outstanding packet in the sender-receiver channel at any given time. In other words, it only sends the next packet after it is sure the current packet has been received correctly (through the indication of a postive acknowledgment).</p>
+
+<h2 id='pipelined_protocols'>Pipelined Protocols</h2>
+
+<p>The protocol <code>rdt3.0</code> described in the Kurose Ross book is <em>functionally correct</em> meaning that it can be shown that it will deliver packets correctly and in order in ALL situations. However, the performance of <code>rdt3.0</code> will be rather poor due to the nature of stop and wait protocols. The fact that only one packet is being sent at a time means that we will have utterly low link utilization.</p>
+
+<h3 id='example_of_performance_of_stop_and_wait_protocol'>Example of Performance of Stop and Wait Protocol</h3>
+
+<p>Consider two hosts situated rather geographically distant so that the propogation delay between them will be relatively large. For a propogation delay assumed to be at the speed of light, lets assume a propogation delay from one end to the other will be <code>P = 20 ms</code>. Suppose they are connected on a high speed gigabit channel with tansmission rate of <code>R = 1 Gbps = 10^9 bits per second</code>, and sending packets of size <code>L = 2KB = 2,000 bytes</code>. Since we have approximately <code>16,000 bits</code> per packet (headers and data), then the transmission delay can then be calculated as</p>
+
+<pre><code>d_t = L / R = 16,000 b / 10^9 bps = 16 usec = 16 * 10^(-6) sec</code></pre>
+
+<p>If the sender begins transmission at <code>t_0 = 0</code>, then the last bit would enter the channel at the sender side at <code>t_1 = L / R = 16 usec</code>. The packet would travel at the speed of light, the first bit arriving at <code>t_2 = P = 20 ms</code> and the last bit arriving at</p>
+
+<pre><code>t_3 = P + (L / R) = 20 ms + 16 usec = 20.016 ms</code></pre>
+
+<p>It will take the same amount of time for the receiver to send an acknowledgment to the sender. If we ignore the transmission delay for the very small ACK packet then it would arrive back at the sender at</p>
+
+<pre><code>t_4 = 2 * P + L / R = 40.016 ms</code></pre>
+
+<p>Only after this point in time, <code>t_4</code> can the sender transmit another packet. This means that the sender only has a link utilizatization of</p>
+
+<pre><code>U = (L / R) / (2 * P + L / R)
+  = (16 * 10^(-6)) sec / (40.016 * 10^(-3)) sec = 0.0004</code></pre>
+
+<p>In other words our stop and wait protocol was only able to acheive a link utilization of 0.04% in this case! This is not good. In order to solve this problem with stop and wait protocols, we use a technique known as <strong>pipelining</strong>. This technique is not only used in networking, but also heavily relied on in computer architecture as well and is employed by most modern processors.</p>
+
+<p>Using pipelining in a reliable data transfer protocol will have some known consequences as well:</p>
+
+<ul>
+<li>
+<p>The number of sequence numbers used will have to be increased to accomodate the number of packets that can be oustanding in the sender-receiver channel at a given time.</p>
+</li>
+
+<li>
+<p>The sender will have to buffer all the packets that have been transmitted but for which an acknowledgment has not yet been received. Buffering at the receiver may also be needed.</p>
+</li>
+</ul>
+
+<p>There are two approaches that are generally used in pipelining protocols to deal with error recovery.</p>
+
+<h3 id='gobackn_gbn_protocols'>Go-Back-N (GBN) Protocols</h3>
+
+<ul>
+<li>Sender is able to transmit multiple packets if available and without waiting for acknowledgments.</li>
+
+<li>Sender cannot have anymore than some maximum allowable number, <code>N</code>, of outstanding currently unacknowledged packets in the channel.</li>
+</ul>
+
+<p>Kurose in ross are able to define four different intervals in the range of sequence numbers used in a GBN protocol. If we define the sequence number of the oldest unacknowledged packet as <code>base</code>, and the smallest unused sequence number as <code>nextseqnum</code>, which is also the sequence number of the next packet to be sent. Then the four intervals are defined as follows:</p>
+
+<ul>
+<li>The interval <code>[0, base - 1]</code> covers sequence numbers that have been transmitted and acknowledged.</li>
+
+<li>The interval <code>[base, nextseqnum -1]</code> consists of sequence numbers of packets that have already been transmitted but are as of yet unacknowledged.</li>
+
+<li>The interval <code>[nextseqnum, base + N-1]</code> consists of packets which can be sent immediately if data arrives from the upper application layer.</li>
+
+<li>The interval covering sequence numbers greater than or equal to <code>base+N</code> cannot be used until an unacknowledged packet, is acknowledged.</li>
+</ul>
+
+<p>When an a given acknowledgment is received at the sender from the receiver, the Go-Back-N protocol may allow the sender to automatically acknowledge any unacknowledged packets with a sequence number less than the sequence number being acknowledged, even if no acknowledgment has actually been received for these packets. This is possible due to the fact that the sender knows that the GBN receiver will only ACK a packet if it has received all other packets with sequence numbers less than the received packet.</p>
+
+<p>The range of sequence numbers that may be oustanding in the channel is usually thought of as a window of size N of packets that may be sent. The window slides as more packets are acknowledged. Because of this, the Go-Back-N and other protocols that operate similarly, are often also referred to as <strong>sliding-window protocols</strong>.</p>
+
+<p>One might wonder why we limit the number of outstanding packets at all if this type of protocol will work. You may even reason that there is no need for such a limit. However, you&#8217;d be wrong. Flow control is one, but not the only, reason for this. Flow control is needed in order to ensure that the sender does not overwhelm the receiver. If we have a sender that is capable of sending at a much higher rate than the receiver is capable of receiving then we will have many dropped packets and utilization will suffer.</p>
+
+<p>A packets sequence number is carried in a fixed-length field in the packet header. Because we are using a fixed-length sequence number field we must have a finite range of valid sequence numbers. If the number of bits used in the sequence header is <code>n</code> then the range of valid sequence numbers will be <code>[0, 2^n - 1]</code>. The <strong>sequence number space</strong> may, therefore, be though of as a ring of size <code>2^n</code>. The common reliable data transfer protocol in use today, TCP, uses 32-bit sequence numbers. TCP sequence numbers also refer to bytes in the stream rather than packets.</p>
+
+<p>The following FSM diagrams from the Kurose Ross text illustrate the sender and receiver sides of the GBN protocol.</p>
+
+<p><img alt='gbn protocol fsm' src='gbn_fsm.png' /></p>
+
+<p>It&#8217;s easy to think you understand how this protocol will work, but almost no one quite understands how it is going to work in every situation just by reading a description like I have provided. What I would recommend is checking out this open source java applet which simulates and visualizes a Go-Back-N protocol. You should go play with the <a href='http://media.pearsoncmg.com/aw/aw_kurose_network_2/applets/go-back-n/go-back-n.html'><strong>Go-Back-N applet</strong></a>, first seeing how it works under normal conditions and then try killing some packets on the way to the receiver. Also try killing some acknowledgments on the way to the sender to see how it will work in all situations.</p>
+
+<p>The name <strong>Go-Back-N</strong> is derived from the fact that when a timeout occurs on an unacknowledged packet, then the sender retransmits all of the currently unacknolwedged packets. The protocol only maintains a single timer for the oldest unacknowledged packet. If there are still additional outstanding unacknowledged packets in the channel when the acknowledgment for the oldest packet arrives, the timer is simply restarted for the next oldest packet.</p>
+
+<h3 id='selective_repeat_sr_protocols'>Selective Repeat (SR) Protocols</h3>
+
+<p>The GBN protocol allows the pipeline between the receiver-sender to be relatively fully utilized. Hwoever, there are sscenarios in which the protocol&#8217;s perfromance will suffer. If the window size and what&#8217;s called the <a href='http://en.wikipedia.org/wiki/Bandwidth-delay_product'><strong>bandwidth-delay product</strong></a> product are both large then there will be many oustanding unacknowledged packets at any given time. In this situation a single packet error can cause the GBN protocol to retransmit many packets. If this happens often, then the many unnecessary retransmissions will fill the pipeline often and performance will suffer because of it.</p>
+
+<p><strong>Selective repeat protocols</strong> attempt to avoid unneccessary retransmissions by only retransmitting those packets that appear to have been lost or corrupted. This is acheived by having the receiver <em>individually</em>, rather than <em>cumulatively</em>, acknowledge correctly received packets. Again a window size of <code>N</code> will be used to limit the number of currently oustanding packets in the channel. However, unlike the GBN protocol, the SR sender will already have received acknowledgements for some of the packets in the window and will keep a timer for each unacknowledged packet. The following diagram illustrates the view of the sequence number space and the window from the point of view of both the sender and receiver.</p>
+
+<p><img alt='SR protocol sequence number space' src='sr_seq_num_space.png' /></p>
+
+<p>The SR protocol receiver acknowledges correctly received packets regardless of whether they are out of order. Because of this the receiver must buffer out of order packets until any missing packets (with lower sequence numbers) arrive. At the point when the missing packets arrive, a batch of packets can then be delivered to the upper application layer.</p>
+
+<p>Note that, unlike the GBN receiver, the SR receiver cannot ignore incoming retransmitted packets which have already been received (due to a lost or corrupted acknowledgment). This is necessary because if an acknowledgment is lost, the sender will eventually have to retransmit that packet before the window will advance beyond it. If the receiver ignores this retransmission then the sender&#8217;s window would never advance any further. As a consequence, the sender and receiver will not always have an identical view of what has been received correctly. This also means that the sliding window for the sender and receiver will can be at different positions.</p>
+
+<p>There are three events that an SR sender must act upon listed as follows:</p>
+
+<ol>
+<li><strong>Data received from application layer.</strong> - The sender determines the next available sequence number for the new packet to be created. If the sequence number is within the sliding window, then the packet is created and transmitted. If the next sequence number is beyond the sliding window&#8217;s current position, then the sender will have to buffer the data or return it to the upper layer.</li>
+
+<li><strong>Timeout waiting for an acknowledgment.</strong> - A timeout must be kept for each unacknowledged packet in the channel. Upon a timeout expiring, the packet for which the timeout occured is retransmitted.</li>
+
+<li><strong>Acknowledgment for a packet is received.</strong> - Sender marks the packet as correctly received if it is in the window. If and only if the acknowledgment sequence number is equal to <code>send_base</code> (the first sequence number in the window), then the window is moved forward to begin at the next sequence number that has of yet has not been acknowledged.</li>
+</ol>
+
+<p>There are also several events for which an SR receive must act upon:</p>
+
+<ol>
+<li><strong>Sequence number <code>rcv_base</code> correctly received.</strong> - <code>rcv_base</code> is packet with the samllest sequence number that has of yet to be received. The receivers window slides forward to begin at the next as of yet received packet, and all packets before this are delivered to the upper application layer.</li>
+
+<li><strong>Sequence number within <code>[rcv_base + 1, rcv_base + N-1]</code> correctly received.</strong> - The packet falls within the receiver&#8217;s sliding window, however, there is still at least 1 other packet, <code>rcv_base</code>, which has not been correctly received. This packet must be buffered before it can be delivered to the application layer. It will only be delivered once all other outstanding packets with sequence numbers less than it have been received.</li>
+
+<li><strong>Sequence number within <code>[rcv_base - N, rcv_base - 1]</code> correctly received.</strong> - This is a packet that the receiver has already previously acknowledged. This happens due to either a premature timeout, or a lost acknowledgment. In this case, another acknowledgment must be generated in order to ensure that the sender&#8217;s window advances.</li>
+</ol>
+
+<p>There is an applet, similar to the <a href='http://media.pearsoncmg.com/aw/aw_kurose_network_2/applets/go-back-n/go-back-n.html'><strong>Go-Back-N Applet</strong></a>, which demonstrates the selective repeat protocol. You are encouraged to check out the <a href='http://www.eecis.udel.edu/~amer/450/TransportApplets/SR/SRindex.html'><strong>Selective Repeat Applet</strong></a> and compare the two protocols.</p>
+
+<h3 id='getting_rid_of_another_assumption'>Getting Rid Of Another Assumption</h3>
+
+<p>An assumption that we made in describing all three of the previous protocols is that the underlying unreliable channel will not reorder packets. When reordering can occur at the lower layers, then the effect is that a sequence numbers may arrive that are in neither the sender nor the receivers current window. The solution to this problem is to ensure that sequence numbers are not reused until the sender is certain that the a packet with the given sequence number could not possibly be somewhere in the network. This is implemented in practice by having a maximum packet lifetime that a packet can live in the network. This is known through the use of the <code>TTL</code> field in the IP datagram header utilized in the network below the reliable data tranfer protocol. TCP assumes a maximum packet lifetime of approximately 3 minutes as defined in RFC 1323.</p>
+
+<h2 id='connectionoriented_protocols'>Connection-Oriented Protocols</h2>
+
+<p>TCP, the Web&#8217;s transport-layer, does in fact rely on many of the principles and approaches outlined above in the previous classifications of protocols. These include error detection, retransmitted lost/corrupted packets, cumulative acknowledgments, packet timers, and sequence numbers. However, TCP also employs a technique known as <strong>connection-oriented transport</strong>. This means that in order for two processes to communicate using the protocol, they must first establish a connection. This is accomplished through what is known as a <strong>handshake</strong> consisting of sending setup packets sent in order to estbalish the data transfer on both the sending and receiving ends.</p>
+
+<p>A transport-layer protocol that sets up a connection in a manner similar to TCP does not have a connection in the physical sense between sender and receiver such as is the case in circuit-switched networks. The intermediate network components (routers) do not maintain the connection state, and it is setup, torn down, and maintained completely at the end systems. Routers are completely oblivious to upper-layer protocols.</p>
+
+<p>A TCP connection can provide a <strong>full-duplex channel</strong> meaning that data can be sent in both directions between two processes simultaneously. A TCP connection is also always <strong>point-to-point</strong> meaning that there are only two end points between which the connection exists. A technique known as <strong>multicasting</strong>, in which data is transferred from one process to many simultaneously, is not possible with TCP due to the point-to-point nature of its connections.</p>
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2013 Cory Gross
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+
