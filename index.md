@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DevBlog of Cory Gross
+title: Dev Blog of Cory Gross
 ---
 {% include JB/setup %}
 

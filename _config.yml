@@ -14,6 +14,8 @@ tagline: Personal web space for Cory Gross
 author :
   name : Cory Gross
   email : cmg0030@tigermail.auburn.edu
+  google: CoryG89@gmail.com
+  stackexchange: CoryG89@gmail.com
   github : CoryG89
   twitter : CoryG89
   facebook : CoryG89
@@ -101,7 +103,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-40516010-1'
     getclicky :
       site_id : 
     mixpanel :
