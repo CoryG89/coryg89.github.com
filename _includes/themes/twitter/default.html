@@ -36,9 +36,7 @@
     <script src="{{ BASE_PATH }}js/bootstrap.min.js"></script>
     <script src="{{ BASE_PATH }}js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-
   </head>
-
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -59,22 +57,13 @@
         </div>
       </div>
     </div>
-
     <div class="container-narrow">
-
       <div class="content">
         {{ content }}
       </div>
       <hr>
-      <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
-        </p>
-      </footer>
-
+      <footer><p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }} -- built with open source services and tools such as <a href="http://github.com/" target="_blank">GitHub</a>, <a href="http://github.com/mojombo/jekyll" target="_blank">Jekyll</a>, and <a href="http://github.com/twitter/bootstrap" target="_blank">Twitter Bootstrap</a>.</p></footer>
     </div>
-
     {% include JB/analytics %}
   </body>
 </html>
