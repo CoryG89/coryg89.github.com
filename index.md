@@ -28,12 +28,9 @@ my articles or projects please do not hesitate to contact me as well. I enjoy
 solving technical problems and love people being able to learn from things
 I've done in the past.
 
-Here are my profiles on my favorite spots to hang out on the Web:
+Here are my profiles on my favorite spots to hang out around the Web:
 
-<div class="row">
-<div class="span4 offset2"><h5 style="margin-bottom:0px;">Stack Overflow</h5><a href="http://stackoverflow.com/users/1359785/cory-gross">
-<img src="http://stackoverflow.com/users/flair/1359785.png" width="208" height="58" alt="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a></div><div class="span4 offset1"><iframe src="http://githubbadge.appspot.com/badge/CoryG89" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder=0></iframe></div></div>
-
+<div class="row"><div class="span4 offset2"><h5 class="clip-bottom">Stack Overflow</h5><a href="http://stackoverflow.com/users/1359785/cory-gross"><img src="http://stackoverflow.com/users/flair/1359785.png" width="208" height="58" alt="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a></div><div class="span4 offset1"><h5 class="clip-bottom">GitHub</h5><iframe src="http://githubbadge.appspot.com/badge/CoryG89" width="200" height="142"></iframe></div></div>
 
 [1]: https://github.com/mojombo/jekyll
 [2]: https://gtihub.com/twitter/bootstrap
