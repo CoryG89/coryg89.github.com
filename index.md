@@ -9,10 +9,12 @@ tagline: Let's build something.
 My name is Cory Gross. I am a software developer graduating with my Bachelor's
 in Software Engineering from Auburn University in December of 2013. I am
 interested in working with a like-minded team to build good software that
-people actually use. I like Web/mobile development, games, networking, and
-technology in general. I have a passion for open source and love learning to
-use new tools. This site is hosted for free on GitHub Pages and was built
-using [**Jekyll**][1] and [**Twitter Bootstrap**][2].
+people actually use. I am also interested in things like: open source
+technologies, standards, and platforms such as the Web, mobile platforms, game
+development, and technology in general. I am the type that is interested in
+technology for it's own sake, but I also want to make an impact with my work.
+I love learning to use new tools and technology and I have a passion for open
+source.
  
 I enjoy the startup atmosphere and could definitely see myself working in the
 Silicon Valley area with a small team. However, I also think it would also be
