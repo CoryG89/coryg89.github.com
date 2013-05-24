@@ -122,8 +122,8 @@ JB :
   #
   sharing :
     provider : all
-    twitter :
-      size :
+    twitter : 
+      size : medium
       via :
       count :
     facebook :

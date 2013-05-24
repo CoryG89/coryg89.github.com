@@ -7,11 +7,10 @@
     <div class="content">
       {{ content }}
     </div>
-
     <h5>Sharing</h5>
-    <div class="post-sharing">
+    <ul class="tag_box inline">
       {% include JB/sharing %}
-    </div>
+    </ul>
     <h5>Categories</h5>
   {% unless page.categories == empty %}
     <ul class="tag_box inline">
@@ -28,7 +27,6 @@
       {% include JB/tags_list %}
     </ul>
   {% endunless %}  
-
     <hr>
     <div class="pagination">
       <ul>
