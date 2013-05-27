@@ -6,4 +6,10 @@ group: navigation
 ---
 {% include JB/setup %}
 
-This page will display all my project pages.
+<ul>
+{% for page in site.pages %}
+{% if page.group == 'project' %}
+  <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+{% endif %} 
+{% endfor %}
+</ul>

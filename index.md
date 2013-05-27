@@ -6,8 +6,8 @@ tagline: Let's build something.
 ---
 {% include JB/setup %}
 
-My name is Cory Gross. I am a software developer graduating with my Bachelor's
-in Software Engineering from Auburn University in December of 2013. I am
+My name is Cory Gross. I am a software developer graduating in December 2013
+with my Bachelor of Science in Software Engineering from Auburn University. I am
 interested in working with a like-minded team to build good software that
 people actually use. I am also interested in things like: open platforms such as
 the Web, mobile applications, networking, graphics, physics, game development,
@@ -40,7 +40,7 @@ problems and like collaborating with others online. Just drop me a line.
 
 <div class="row"><div class="span4 offset1"><h5 class="clip-bottom">Stack Overflow</h5><a href="http://stackoverflow.com/users/1359785/cory-gross"><img src="http://stackoverflow.com/users/flair/1359785.png" width="200" height="58" alt="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a></div><div class="span4"><h5 class="clip-bottom">Google Plus</h5>
 <div class="g-plus" data-width="270" data-height="69" data-href="//plus.google.com/105235638732805537250" data-rel="author"></div>
-</div></div><div class="row"><div class="span4 offset1"><h5 class="clip-bottom">GitHub</h5><iframe src="http://githubbadge.appspot.com/badge/CoryG89" width="200" height="142"></iframe></div></div>
+</div></div><div class="row"><div class="span4 offset1"><h5 class="clip-bottom">GitHub</h5><iframe src="http://githubbadge.appspot.com/badge/{{ site.author.github }}" width="200" height="142"></iframe></div></div>
 
 <!-- Google Plus Add to Circles Script -->
 <script type="text/javascript">
