@@ -10,8 +10,13 @@ markdown: redcarpet
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : CoryG89 DevBlog
-tagline: The Personal Web Space of Cory Gross
+title : Cory Gross
+tagline: Let's build something.
+brandTitle: Cory Gross
+description: |
+  Personal blog, portfolio, and resume of Cory Gross. Technical topics including
+  software development, web and open technologies, mobile development, games,
+  graphics, math, and physics.
 author :
   name : Cory Gross
   email : cmg0030@tigermail.auburn.edu

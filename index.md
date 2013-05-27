@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-listingTitle: Home
+title: Home
+displayTitle: Welcome Home!
 tagline: Let's build something.
 ---
 {% include JB/setup %}
@@ -9,28 +9,47 @@ tagline: Let's build something.
 My name is Cory Gross. I am a software developer graduating with my Bachelor's
 in Software Engineering from Auburn University in December of 2013. I am
 interested in working with a like-minded team to build good software that
-people actually use. I am also interested in things like: open source
-technologies, standards, and platforms such as the Web, mobile platforms, game
-development, and technology in general. I am the type that is interested in
-technology for it's own sake, but I also want to make an impact with my work.
-I love learning to use new tools and technology and I have a passion for open
-source.
+people actually use. I am also interested in things like: open platforms such as
+the Web, mobile applications, networking, graphics, physics, game development,
+and technology in general. I am the type that is interested in technology and
+its advancement for it's own sake, but I'd also like to make a real impact with
+my work. I feel the desire for my software to be used. I love learning to use
+new tools and technology, and I also have a passion for open source.
  
-I enjoy the startup atmosphere and could definitely see myself working in the
-Silicon Valley area with a small team. However, I also think it would also be
-amazing to work at some of the larger tech companies that I have admired.
-Another passion of mine is games and I would love to develop them for a living
-if I landed a job with the right studio.
+I enjoy the startup atmosphere and could definitely see myself heading out to
+the Silicon Valley area after graduation. However, there are also larger tech
+companies that I have always admired and I think it would be amazing to work at
+some of those places as well. Another passion of mine is games and there are
+lots of game studios and figures in the gaming industry that I've looked up to
+as well.
 
-You can contact me anytime with questions about my experience or with
-information about a job. If you're a developer and have questions about any of
-my articles or projects please do not hesitate to contact me as well. I enjoy
-solving technical problems and love people being able to learn from things
-I've done in the past.
+This site will serve as a personal blog for my experiences and place to post
+technical articles. It will also house a growing body of my work that I am
+making available online now that I have started to learn HTML5 and JavaScript
+and other web technologies in the past year. Previously my experience was mostly
+in more traditional native languages such as (C, C++, Java, etc) other than just
+basic HTML. I have expanded my horizons to include modern web devlopment, both
+backend and frontend. I like writing client server systems and have done so in
+C, C++, Java, and JavaScript using Node.JS.
 
-Here are my profiles on my favorite spots to hang out around the Web:
+Feel free to contact me anytime about employment or with questions about my
+experience. If you're a developer and have questions about any of my articles
+or projects please do not hesitate to contact me as well. I enjoy working on
+problems and like collaborating with others online. Just drop me a line.
 
-<div class="row"><div class="span4 offset2"><h5 class="clip-bottom">Stack Overflow</h5><a href="http://stackoverflow.com/users/1359785/cory-gross"><img src="http://stackoverflow.com/users/flair/1359785.png" width="208" height="58" alt="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a></div><div class="span4 offset1"><h5 class="clip-bottom">GitHub</h5><iframe src="http://githubbadge.appspot.com/badge/CoryG89" width="200" height="142"></iframe></div></div>
+
+<div class="row"><div class="span4 offset1"><h5 class="clip-bottom">Stack Overflow</h5><a href="http://stackoverflow.com/users/1359785/cory-gross"><img src="http://stackoverflow.com/users/flair/1359785.png" width="200" height="58" alt="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a></div><div class="span4"><h5 class="clip-bottom">Google Plus</h5>
+<div class="g-plus" data-width="270" data-height="69" data-href="//plus.google.com/105235638732805537250" data-rel="author"></div>
+</div></div><div class="row"><div class="span4 offset1"><h5 class="clip-bottom">GitHub</h5><iframe src="http://githubbadge.appspot.com/badge/CoryG89" width="200" height="142"></iframe></div></div>
+
+<!-- Google Plus Add to Circles Script -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
 
 [1]: https://github.com/mojombo/jekyll
 [2]: https://gtihub.com/twitter/bootstrap
