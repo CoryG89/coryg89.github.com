@@ -38,11 +38,9 @@ or projects please do not hesitate to contact me as well. I enjoy working on
 problems and like collaborating with others online. Just drop me a line.
 
 
-<div class="row"><div class="span4 offset1"><h5 class="clip-bottom">Stack Overflow</h5><a href="http://stackoverflow.com/users/1359785/cory-gross"><img src="http://stackoverflow.com/users/flair/1359785.png" width="200" height="58" alt="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a></div><div class="span4"><h5 class="clip-bottom">Google Plus</h5>
-<div class="g-plus" data-width="270" data-height="69" data-href="//plus.google.com/105235638732805537250" data-rel="author"></div>
-</div></div><div class="row"><div class="span4 offset1"><h5 class="clip-bottom">GitHub</h5><iframe src="http://githubbadge.appspot.com/badge/{{ site.author.github }}" width="200" height="142"></iframe></div></div>
+<div class="row"><div class="span4 offset1"><h5 class="clip-bottom">Stack Overflow</h5><a href="http://stackoverflow.com/users/1359785/cory-gross"><img src="http://stackoverflow.com/users/flair/1359785.png" width="200" height="58" alt="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Cory Gross at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a></div><div class="span4"><h5 class="clip-bottom">Google Plus</h5><div class="g-plus" data-width="270" data-height="69" data-href="//plus.google.com/105235638732805537250" data-rel="author"></div></div></div><div class="row"><div class="span4 offset1"><h5 class="clip-bottom">GitHub</h5><iframe src="http://githubbadge.appspot.com/badge/{{ site.author.github }}" width="200" height="142"></iframe></div><div class="span4"><h5 class="clip-bottom">Facebook</h5><a href="https://www.facebook.com/{{site.author.facebook}}" target="_TOP" title="Cory Gross"><img src="https://badge.facebook.com/badge/100000663717957.1916.1262426109.png" style="border: 0px;" /></a></div></div>
 
-<!-- Google Plus Add to Circles Script -->
+<!-- Asynchrnous Google Plus Add to Circles Script -->
 <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;

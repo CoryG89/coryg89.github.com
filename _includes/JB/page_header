@@ -1,0 +1,27 @@
+<div class="page-header">
+  {% unless page.displayTitle %}
+    {% assign displayTitle = page.title %} 
+  {% else %}
+    {% assign displayTitle = page.displayTitle %}
+  {% endunless %}
+  
+  {% capture h2Diff %}{{ displayTitle | size | minus:50 }}{% endcapture %}
+  {% capture h3Diff %}{{ displayTitle | size | minus:65 }}{% endcapture %}
+  {% capture h4Diff %}{{ displayTitle | size | minus:75 }}{% endcapture %}
+  
+  {% capture tagLine %}
+  {% if page.tagline %}
+    <small class="no-wrap">{{ page.tagline }}</small>
+  {% endif %}
+  {% endcapture %}
+
+  {% if h2Diff contains '-' %}{% comment %}<!-- Less than 35 -->{% endcomment %}
+    <h2>{{ displayTitle }}{{ tagLine }}</h2>
+  {% elsif h3Diff contains '-' %}{% comment %}<!-- Less than 45 -->{% endcomment %}
+    <h3>{{ displayTitle }}{{ tagLine }}</h3>
+  {% elsif h4Diff contains '-' %}{% comment %}<!-- Less than 55 -->{% endcomment %}
+    <h4>{{ displayTitle }}{{ tagLine }}</h4>
+  {% else %}{% comment %}<!-- More than 55 characters -->{% endcomment %}
+    <h5>{{ displayTitle }}{{ tagLine }}</h5>
+  {% endif %}
+</div>

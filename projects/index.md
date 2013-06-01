@@ -7,9 +7,7 @@ group: navigation
 {% include JB/setup %}
 
 <ul>
-{% for page in site.pages %}
-{% if page.group == 'project' %}
-  <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-{% endif %} 
-{% endfor %}
+{% assign pages_list = site.posts %}
+{% assign group = 'project' %}
+{% include JB/pages_list %}
 </ul>

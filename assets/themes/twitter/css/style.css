@@ -125,3 +125,24 @@ iframe {
 .clip-bottom {
     margin-bottom: 0px;
 }
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+/** Custom thumbnails */
+.thumbnails {
+    vertical-align: central;
+    text-align: center;
+}
+.thumbnails li {
+    height: auto;
+    display: inline-block;
+    float: none;
+    zoom: 1;
+    margin: 7px;
+}
+
+.thumbnails img {
+    border: 1px solid #000;
+}
