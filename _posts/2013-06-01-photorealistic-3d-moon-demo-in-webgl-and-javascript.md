@@ -12,6 +12,8 @@ tags: ["WebGL", "JavaScript", "3D", "HTML5", "Three.JS"]
 
 ### Introduction
 
+[![Moon Demo Screenshot][screen1]][screen1]
+
 A while back I wanted to learn a bit about GLSL and how to write shaders. I
 already had some experience with [**Three.JS**][three.js] and using its WebGL
 renderer and I knew that it allowed custom shaders to be utilized through its
@@ -125,6 +127,8 @@ void main() {
 	gl_FragColor = texture2D(textureMap, vUv) * lighting;
 }
 ```
+
+[screen1]: https://raw.github.com/CoryG89/MoonDemo/master/img/screens/screen1.png
 
 [skybox1]: https://raw.github.com/CoryG89/MoonDemo/master/img/starfield/back.png
 [skybox2]: https://raw.github.com/CoryG89/MoonDemo/master/img/starfield/front.png
