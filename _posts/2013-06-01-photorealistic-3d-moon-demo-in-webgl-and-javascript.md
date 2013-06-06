@@ -6,13 +6,14 @@ displayTitle: "3D Moon Demo in WebGL and JavaScript"
 description: ""
 group: "project"
 category: "Technical"
+highlights: true
 tags: ["WebGL", "JavaScript", "3D", "HTML5", "Three.JS"]
 ---
 {% include JB/setup %}
 
-### Introduction
-
 [![Moon Demo Screenshot][screen1]][screen1]
+
+### Introduction
 
 A while back I wanted to learn a bit about GLSL and how to write shaders. I
 already had some experience with [**Three.JS**][three.js] and using its WebGL
@@ -60,8 +61,8 @@ My scaled down version is shown here:
 ### Just Need A Few More Things
 
 After this I generated 6 randomized subtle star patterns in order to create a
-a starry skybox for my scene. I also used the NVIDIA Normal Map Filter in order
-to generate a normal map for the Moon map.
+a starry skybox for my scene. I also used the [NVIDIA Normal Map Filter][nvidia]
+in order to generate a normal map for the Moon map.
 
 [![Scaled Moon Normal Map][scaled_normal]][scaled_normal]
 
@@ -83,7 +84,6 @@ varying vec3 vLightVector;
 void main() {
     vUv = uvScale * uv;
             
-
     // Create the Tangent-Binormal-Normal Matrix used for transforming
     // coordinates from object space to tangent space
     vec3 vNormal = normalize(normalMatrix * normal);
@@ -148,3 +148,4 @@ void main() {
 [Jens Meyer]: http://home.arcor.de/jimpage/earth.html
 [Clementine]: http://en.wikipedia.org/wiki/Clementine_(spacecraft)
 [chrome]: https://google.com/chrome
+[nvidia]: https://developer.nvidia.com/nvidia-texture-tools-adobe-photoshop

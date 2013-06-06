@@ -38,8 +38,10 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="{{ BASE_PATH }}{{ HOME_PATH }}js/bootstrap.min.js"></script>
+    {% if page.highlights %}
     <script src="{{ BASE_PATH }}{{ HOME_PATH }}js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    {% endif %}
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">

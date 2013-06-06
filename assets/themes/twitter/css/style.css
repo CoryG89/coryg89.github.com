@@ -92,36 +92,6 @@ iframe {
     border: 0;
 }
 
-.share-btn {
-    padding-top: 15px;
-}
-
-#share-btn-hn {
-    padding-top: 7px;
-    width: 90px;
-}
-
-#share-btn-rd {
-    padding-top: 11px;
-    width: 90px;
-}
-
-#share-btn-tw {
-    width: 80px;
-    padding-left:7px;
-}
-
-#share-btn-gp {
-    width: 60px;
-    padding-left: 7px;
-}
-
-#share-section {
-    margin-left: 7px;
-    margin-top: 0px;
-    height: 40px;
-}
-
 .clip-bottom {
     margin-bottom: 0px;
 }
@@ -146,3 +116,5 @@ iframe {
 .thumbnails img {
     border: 1px solid #000;
 }
+
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}

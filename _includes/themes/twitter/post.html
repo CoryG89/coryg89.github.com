@@ -3,8 +3,9 @@
     <div class="content">
       {{ content }}
     </div>
+    <div>
     <h5 class="clip-bottom">Sharing</h5>
-    <ul class="tag_box inline">
+    <ul class="inline">
       {% include JB/sharing %}
     </ul>
     <h5>Categories</h5>
@@ -41,7 +42,7 @@
     <div class="date">
       <span id="date-label">Posted on {{ page.date | date_to_long_string }}</span>
     </div>
-    </div>
+    </div></div>
     <hr>
     {% include JB/comments %}
   </div>
