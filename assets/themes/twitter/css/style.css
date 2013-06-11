@@ -117,4 +117,10 @@ iframe {
     border: 1px solid #000;
 }
 
-code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+p {
+    margin-bottom: 12px;
+}
+
+div.content > p > a > img {
+    border: #000 1px solid;
+}

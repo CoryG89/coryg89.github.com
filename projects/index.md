@@ -8,6 +8,6 @@ group: navigation
 
 <ul>
 {% assign pages_list = site.posts %}
-{% assign group = 'project' %}
+{% assign group = 'Project' %}
 {% include JB/pages_list %}
 </ul>

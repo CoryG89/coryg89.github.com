@@ -3,8 +3,8 @@ layout: post
 title: "Photorealistic 3D Moon Demo in WebGL and JavaScript"
 listTitle: "WebGL Moon Demo"
 displayTitle: "3D Moon Demo in WebGL and JavaScript"
-description: ""
-group: "project"
+description: "Creating a Photorealistic 3D Moon Demo in WebGL and JavaScript using Three.JS and GLSL shaders."
+group: "Project"
 category: "Technical"
 highlights: true
 tags: ["WebGL", "JavaScript", "3D", "HTML5", "Three.JS"]
