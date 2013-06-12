@@ -3,6 +3,7 @@ layout: post
 title: "Release Open Source HTML5 Games on the Windows Store"
 description: "Releasing an open source KineticJS game on the Windows Store"
 category: "Experiences"
+highlights: true
 tags: ["KineticJS", "Open Source", "Windows Store", "Canvas", "HTML5", "Game Development"]
 ---
 {% include JB/setup %}
