@@ -124,3 +124,11 @@ p {
 div.content > p > a > img {
     border: #000 1px solid;
 }
+
+div.content > div.page-header > h3 {
+    font-size: 22px;
+}
+
+div.content > div.page-header > h4 {
+    font-size: 18px;
+}

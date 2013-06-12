@@ -11,17 +11,17 @@
   
   {% capture tagLine %}
   {% if page.tagline %}
-    <small class="no-wrap">{{ page.tagline }}</small>
+  <small class="no-wrap">{{ page.tagline }}</small>
   {% endif %}
   {% endcapture %}
 
   {% if h2Diff contains '-' %}{% comment %}<!-- Less than 35 -->{% endcomment %}
-    <h2>{{ displayTitle }}{{ tagLine }}</h2>
+  <h2>{{ displayTitle }}{{ tagLine }}</h2>
   {% elsif h3Diff contains '-' %}{% comment %}<!-- Less than 45 -->{% endcomment %}
-    <h3>{{ displayTitle }}{{ tagLine }}</h3>
+  <h3>{{ displayTitle }}{{ tagLine }}</h3>
   {% elsif h4Diff contains '-' %}{% comment %}<!-- Less than 55 -->{% endcomment %}
-    <h4>{{ displayTitle }}{{ tagLine }}</h4>
+  <h4>{{ displayTitle }}{{ tagLine }}</h4>
   {% else %}{% comment %}<!-- More than 55 characters -->{% endcomment %}
-    <h5>{{ displayTitle }}{{ tagLine }}</h5>
+  <h5>{{ displayTitle }}{{ tagLine }}</h5>
   {% endif %}
 </div>

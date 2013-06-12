@@ -141,10 +141,17 @@ this than using the method I outline above. You could probably implement this
 using a graph with nodes for each board position. If anyone has any ideas or has
 done something similar to this before I'd be interested in hearing from you.
 
+**UPDATE:** I used ported this game over to use WinJS for submission to the new
+Windows 8 Store. You can check out the 
+[**listing in the Windows Store**][win-store-link] or read my
+ [**other post detailing the experience**][win-store-post].
+
 [game]: {{ BASE_PATH }}/PegGame
 [cb-game-pic]: {{ ASSET_PATH }}img/crackerbarrel.jpg
 [wood-texture]: {{ ASSET_PATH }}img/wood-texture.jpg
 [repo]: https://github.com/CoryG89/PegGame
 [kinetic]: http://kineticjs.com
 [cookbook]: http://www.amazon.com/HTML5-Canvas-Cookbook-Eric-Rowell/dp/1849691363
+[win-store-post]: {{BASE_PATH}}/Experiences/2013/06/11/release-open-source-html5-games-on-the-windows-store/
+[win-store-link]: http://apps.microsoft.com/windows/en-us/app/winpegs/f488a6d2-41ef-4278-89db-be25d452cff6
 [game-wiki]: http://en.wikipedia.org/wiki/Peg_solitaire
