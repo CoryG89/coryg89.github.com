@@ -61,9 +61,8 @@
           </a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              {% assign pages_list = site.pages %}
-              {% assign group = 'navigation' %}
-              {% include JB/pages_list %}
+              <li class="{% if page.url == "/archive.html" %}active{% endif %}"><a href="{{BASE_PATH}}archive.html">Archive</a></li>
+              <li class="{% if page.url == "/projects.html" %}active{% endif %}"><a href="{{BASE_PATH}}projects.html">Projects</a></li>
             </ul>
           </div>
         </div>

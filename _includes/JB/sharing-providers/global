@@ -1,5 +1,3 @@
-  <li><i class="icon-share"></i></li>
-
   <li class="share-btn" id="share-btn-hn">
     <a href="http://news.ycombinator.com/submit" class="hn-share-button" data-title="{{ page.title }}" data-url="{{ site.production_url }}{{ page.url }}">Vote on HN</a>
   </li>
@@ -20,8 +18,6 @@
     <div class="g-plusone" data-size="{{ site.JB.sharing.googleplus.size }}" data-annotation="{{ site.JB.sharing.googleplus.annotation }}" data-width="{{ site.JB.sharing.googleplus.width }}"></div>
   </li>
   <script>
-    
-  
   (function(doc, script) {
  	
       // Async Social Buttons
@@ -54,6 +50,4 @@
       $('li.share-btn#share-btn-gp').css('width', '60px');
 
   }(document, 'script'));
-
   </script>
-
