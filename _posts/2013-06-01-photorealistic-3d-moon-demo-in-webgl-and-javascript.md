@@ -29,7 +29,7 @@ try to make a 3D demo of the Moon and use lighting shaders to simulate the Moon
 changing phases. I wanted my demo to be as photorealistic as possible.
 
 You can check out the [**live demo**][demo], or 
-[**view the source code on GitHub**][repo] to check out the result.
+[**view the source code**][repo] on GitHub to check out the result.
 
 ### The Hunt
 
@@ -99,33 +99,32 @@ void main() {
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
 }
 ```
-
 The frament shader is passed the TBN matrix for each vertex and uses it to
 transform the vectors from the normal map to tangent space.
 
 ```
-uniform sampler2D textureMap;
-uniform sampler2D normalMap;     
-varying vec2 vUv;
-varying mat3 tbn;
-varying vec3 vLightVector;
+	uniform sampler2D textureMap;
+	uniform sampler2D normalMap;     
+	varying vec2 vUv;
+	varying mat3 tbn;
+	varying vec3 vLightVector;
 
-void main() {
-	// Transform texture coordinate of normal map to a range (-1.0, 1.0)
-	vec3 normalCoordinate = texture2D(normalMap, vUv).xyz * 2.0 - 1.0;
+	void main() {
+		// Transform texture coordinate of normal map to a range (-1.0, 1.0)
+		vec3 normalCoordinate = texture2D(normalMap, vUv).xyz * 2.0 - 1.0;
 
-	// Transform the normal vector in the RGB channels to tangent space
-	vec3 normal = normalize(tbn * normalCoordinate.rgb);
+		// Transform the normal vector in the RGB channels to tangent space
+		vec3 normal = normalize(tbn * normalCoordinate.rgb);
 
-	// Intensity calculated as dot of normal and vertex-light vector
-	float intensity = max(0.07, dot(normal, vLightVector));
+		// Intensity calculated as dot of normal and vertex-light vector
+		float intensity = max(0.07, dot(normal, vLightVector));
 
-	// Adjustments to alpha and intensity per color channel may be made
-	vec4 lighting = vec4(intensity, intensity, intensity, 1.0);
+		// Adjustments to alpha and intensity per color channel may be made
+		vec4 lighting = vec4(intensity, intensity, intensity, 1.0);
 
-	// Final color is calculated with the lighting applied
-	gl_FragColor = texture2D(textureMap, vUv) * lighting;
-}
+		// Final color is calculated with the lighting applied
+		gl_FragColor = texture2D(textureMap, vUv) * lighting;
+	}
 ```
 
 [screen1]: https://raw.github.com/CoryG89/MoonDemo/master/img/screens/screen1.png

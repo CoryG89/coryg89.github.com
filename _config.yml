@@ -136,7 +136,7 @@ JB :
       layout : button_count
       font :
       faces : false
-      width : 80
+      width : 90
     googleplus :
       size : medium
       width :

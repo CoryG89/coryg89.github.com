@@ -2,7 +2,7 @@
   <!-- Facebook -->
   <li class="share-btn" id="share-btn-fb">
     <div id="fb-root"></div>
-    <div class="fb-like" data-send="false" data-layout="{{ site.JB.sharing.facebook.layout }}" data-width="{{ site.JB.sharing.facebook.width }}" data-show-faces="{{ site.JB.sharing.facebook.faces }}" data-font="{{ site.JB.sharing.facebook.font }}"></div>
+    <div class="fb-like" data-send="true" data-href="{{ site.production_url }}{{ page.url }}" data-layout="{{ site.JB.sharing.facebook.layout }}" data-width="{{ site.JB.sharing.facebook.width }}" data-show-faces="{{ site.JB.sharing.facebook.faces }}" data-font="{{ site.JB.sharing.facebook.font }}"></div>
   </li>
   
   <!-- Twitter -->

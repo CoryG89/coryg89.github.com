@@ -49,8 +49,7 @@ the source video element to be injected into the container. If you'd rather
 have a canvas element, you can wait until the webcam has been initialized and
 then get a canvas. CamMan.js exposes an event-based API:
 
-```
-var camMan = new CamMan();
+<pre><code class="javascript">var camMan = new CamMan();
 camMan.on('start', function () {
 	camMan.getCanvas('container', function (canvas) {
         var ctx = canvas.getContext('2d');
@@ -61,17 +60,18 @@ camMan.on('start', function () {
          ctx.putImageData(imgData)
     });
 });
-```
+</code></pre>
 
 The callback passed to `camMan.getCanvas` is executed once per frame, allowing
 you to manipulate each frame before it is drawn to the canvas. Using this
 capability I was able to quickly create my Photobooth app using image filter
 effects.
 
+### Some Fun Stuff
+
 Here is an example filter which will invert the colors of each pixel:
 
-```
-var inverse = function inverse(imageData) {
+<pre><code class="javascript">var inverse = function inverse(imageData) {
     var data = imageData.data;
     for (var i = 0; i < data.length; i += 4) {
 		data[i] = 255 - data[i];
@@ -80,23 +80,23 @@ var inverse = function inverse(imageData) {
     }
     return imageData;
 };
-```
+</code></pre>
 
 And here is another that converts a video to greyscale by setting the color
 components of each pixel to be the average value of all three color channels.
 
-
-	var grayScale = function grayScale(imageData) {
-		var data = imageData.data;
-		for (var i = 0; i < data.length; i += 4) {
-		   var red = data[i];
-			var green = data[i + 1];
-			var blue = data[i + 2];
-			var average = (red + green + blue) / 3;
-			data[i] = data[i + 1] = data[i + 2] = average;
-		}
-		return imageData;
-	};
+<pre><code class="javascript">var grayScale = function grayScale(imageData) {
+	var data = imageData.data;
+	for (var i = 0; i < data.length; i += 4) {
+		var red = data[i];
+		var green = data[i + 1];
+		var blue = data[i + 2];
+		var average = (red + green + blue) / 3;
+		data[i] = data[i + 1] = data[i + 2] = average;
+	}
+	return imageData;
+};
+</code></pre>
 
 ### Resources
 
