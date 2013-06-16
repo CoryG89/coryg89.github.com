@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Easily Access Webcam With CamMan.js"
+title: "Easily Access Webcam with CamMan.js"
 listTitle: "CamMan.js"
 group: "Project"
 description: "A JavaScript library and event-based API for managing and accessing the webcam and microphone using WebRTC."
@@ -65,7 +65,7 @@ camMan.on('start', function () {
 
 		 /** Manipulate array of pixel data -- imgData.data */
 
-         ctx.putImageData(imgData)
+        ctx.putImageData(imgData)
     });
 });
 </code></pre>
