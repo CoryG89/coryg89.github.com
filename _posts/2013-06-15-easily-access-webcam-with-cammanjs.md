@@ -16,7 +16,7 @@ math behind image effects such as grayscale, sepia, and others. I thought it
 was interesting enough to try to make my own demo. He includes some basic code
 to access the webcam via WebRTC, but I wanted something a little more robust.
 I looked for good libraries out there to do this, but couldn't find exactly
-what I wanted so I decided to roll my own, using 
+what I wanted. I decided to roll my own using 
 [**`leemachin/say-cheese`**][leemachin] as a basis to start with. CamMan.js 
 has been enhanced to support multiple canvas outputs, each of which may be
 manipulated separately per frame. CamMan.js is very lightweight with the
