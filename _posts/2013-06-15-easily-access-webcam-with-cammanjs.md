@@ -17,9 +17,10 @@ was interesting enough to try to make my own demo. He includes some basic code
 to access the webcam via WebRTC, but I wanted something a little more robust.
 I looked for good libraries out there to do this, but couldn't find exactly
 what I wanted so I decided to roll my own, using 
-[**`leemachin/say-cheese`**][leemachin] as a basis to start with. I added the
-ability to easily draw video out to multiple canvases from the same source
-video, allowing each of them to be manipulated separately.
+[**`leemachin/say-cheese`**][leemachin] as a basis to start with. CamMan.js 
+has been enhanced to support multiple canvas outputs, each of which may be
+manipulated separately per frame. CamMan.js is very lightweight with the
+minified source code weighing in at 3.7 KB.
 
 CamMan.js is [**available on GitHub**][repo]. You can check out my Photobooth
 [**example app**][demo] which I was able to easily create using CamMan.js.
@@ -90,7 +91,7 @@ Here is an example filter which will invert the colors of each pixel:
 };
 </code></pre>
 
-And here is another that converts a video to greyscale by setting the color
+And here is another that converts a video to grayscale by setting the color
 components of each pixel to be the average value of all three color channels.
 
 <pre><code class="javascript">var grayScale = function grayScale(imageData) {
