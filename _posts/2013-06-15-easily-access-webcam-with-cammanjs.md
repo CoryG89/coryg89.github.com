@@ -24,6 +24,14 @@ video, allowing each of them to be manipulated separately.
 CamMan.js is [**available on GitHub**][repo]. You can check out my Photobooth
 [**example app**][demo] which I was able to easily create using CamMan.js.
 
+### Support
+
+One thing the library does is include shims for vendor prefixed methods needed
+to access the webcam and microphone array using WebRTC. The demo should work in
+recent versions of Chrome, Firefox, and Opera. If you have any problems, please
+leave me a comment below. Safari and IE support is not there yet as of the time
+of this writing, but the shims include the prefixes for possible future support.
+
 ### The Basics
 
 The simplest thing to get your webcam video onto a page.
