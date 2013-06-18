@@ -76,35 +76,35 @@ position and the second component represented the 'land' position.
 
 Here is how I did it in JavaSript:
 
-	var MoveTable = [];
+<pre><code class="text javascript">var MoveTable = [];
 
-	/** Row one (positions 0-4), bottom row */
-	MoveTable[0] = [{jumpPos:1, landPos:2}, {jumpPos:5, landPos:9}];
-	MoveTable[1] = [{jumpPos:2, landPos:3}, {jumpPos:6, landPos:10}];
-	MoveTable[2] = [{jumpPos:1, landPos:0}, {jumpPos:3, landPos:4},
-					{jumpPos:6, landPos:9}, {jumpPos:7, landPos:11}];
-	MoveTable[3] = [{jumpPos:2, landPos:1}, {jumpPos:7, landPos:10}];
-	MoveTable[4] = [{jumpPos:3, landPos:2}, {jumpPos:8, landPos:11}];
+/** Row one (positions 0-4), bottom row */
+MoveTable[0] = [{jumpPos:1, landPos:2}, {jumpPos:5, landPos:9}];
+MoveTable[1] = [{jumpPos:2, landPos:3}, {jumpPos:6, landPos:10}];
+MoveTable[2] = [{jumpPos:1, landPos:0}, {jumpPos:3, landPos:4},
+				{jumpPos:6, landPos:9}, {jumpPos:7, landPos:11}];
+MoveTable[3] = [{jumpPos:2, landPos:1}, {jumpPos:7, landPos:10}];
+MoveTable[4] = [{jumpPos:3, landPos:2}, {jumpPos:8, landPos:11}];
 
-	/** Row two (positions 5-8) */
-	MoveTable[5] = [{jumpPos:6, landPos:7}, {jumpPos:9,  landPos:12}];
-	MoveTable[6] = [{jumpPos:7, landPos:8}, {jumpPos:10, landPos:13}];
-	MoveTable[7] = [{jumpPos:6, landPos:5}, {jumpPos:10, landPos:12}];
-	MoveTable[8] = [{jumpPos:7, landPos:6}, {jumpPos:11, landPos:13}];
+/** Row two (positions 5-8) */
+MoveTable[5] = [{jumpPos:6, landPos:7}, {jumpPos:9,  landPos:12}];
+MoveTable[6] = [{jumpPos:7, landPos:8}, {jumpPos:10, landPos:13}];
+MoveTable[7] = [{jumpPos:6, landPos:5}, {jumpPos:10, landPos:12}];
+MoveTable[8] = [{jumpPos:7, landPos:6}, {jumpPos:11, landPos:13}];
 
-	/** Row three (positions 9-11) */
-	MoveTable[9] =  [{jumpPos:5,  landPos:0},  {jumpPos:6,  landPos:2}, 
-					 {jumpPos:10, landPos:11}, {jumpPos:12, landPos:14}];
-	MoveTable[10] = [{jumpPos:6,  landPos:1},  {jumpPos:7,  landPos:3}];
-	MoveTable[11] = [{jumpPos:7,  landPos:2},  {jumpPos:8,  landPos:4}, 
-					 {jumpPos:10, landPos:9},  {jumpPos:13, landPos:14}];
+/** Row three (positions 9-11) */
+MoveTable[9] =  [{jumpPos:5,  landPos:0},  {jumpPos:6,  landPos:2}, 
+				 {jumpPos:10, landPos:11}, {jumpPos:12, landPos:14}];
+MoveTable[10] = [{jumpPos:6,  landPos:1},  {jumpPos:7,  landPos:3}];
+MoveTable[11] = [{jumpPos:7,  landPos:2},  {jumpPos:8,  landPos:4}, 
+				 {jumpPos:10, landPos:9},  {jumpPos:13, landPos:14}];
 
-	/** Row four (positions 12 and 13) */
-	MoveTable[12] = [{jumpPos:9,  landPos:5}, {jumpPos:10, landPos:7}];
-	MoveTable[13] = [{jumpPos:10, landPos:6}, {jumpPos:11, landPos:8}];
+/** Row four (positions 12 and 13) */
+MoveTable[12] = [{jumpPos:9,  landPos:5}, {jumpPos:10, landPos:7}];
+MoveTable[13] = [{jumpPos:10, landPos:6}, {jumpPos:11, landPos:8}];
 
-	/** Row five (position 14), top row */
-	MoveTable[14] = [{jumpPos:12, landPos:9}, {jumpPos:13, landPos:11}];
+/** Row five (position 14), top row */
+MoveTable[14] = [{jumpPos:12, landPos:9}, {jumpPos:13, landPos:11}];</code></pre>
 
 Looking at the above table you can see that for entry for position 0, 
 `MoveTable[0]`, has a list of two possible moves from its position on the
@@ -123,7 +123,7 @@ occupied or not. Basically the algorithm goes:
    satisfied.
    1. The `jumpPos` position must be occupied.
    2. The `landPos` position must *not* be occupied.
- - Activate all pegs with at least one valid move and highlight the move for
+ - Activate all pegs with at least one valid move and highlight the move(s) for
    the player.
 
 The full commented source code is [**available on GitHub**][repo] and there

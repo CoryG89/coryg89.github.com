@@ -34,21 +34,21 @@ container div for my KineticJS stage and was all set. The only change I had to
 make to get my JavaScript code working with WinJS was to replace my game over
 message code which used a basic JavaScript alert:
 
-	alert(msg);
+<pre><code class="text javascript">alert(msg);</code></pre>
 
 This is not supported when using WinJS and `alert` will return as `undefined`.
 In order to fix this you can replace your calls to `alert` with the following:
 
-	var gameOverDialog = new Windows.UI.Popups.MessageDialog(msg);
-	gameOverDialog.showAsync();
+<pre><code class="text javascript">var gameOverDialog = new Windows.UI.Popups.MessageDialog(msg);
+gameOverDialog.showAsync();</code></pre>
 
 However, if you have multiple calls it would probably be better to create your
 own alias to `alert` like so:
 
-    var alert = function (msg) {
-		var gameOverDialog = new Windows.UI.Popups.MessageDialog(msg);
-		gameOverDialog.showAsync();
-    };
+<pre><code class="text javascript">var alert = function (msg) {
+	var gameOverDialog = new Windows.UI.Popups.MessageDialog(msg);
+	gameOverDialog.showAsync();
+};</code></pre>
 
 I am not sure why WinJS doesn't just include aliases like the above to make it
 easier for porting browser-based games to the Windows 8 platform. Would seem
