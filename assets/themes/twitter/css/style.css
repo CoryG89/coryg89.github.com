@@ -48,14 +48,10 @@ ul ul, ol ol, ul ol, ol ul {
 
 /* post-full*/
 .post-full .date {
-    margin-bottom: 20px;
     font-weight: bold;
+    text-align: right;
 }
 
-.date {
-    float: right;
-    padding-right: 40px;
-}
 
 /* tag_box */
 .tag_box {

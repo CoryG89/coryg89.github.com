@@ -1,0 +1,17 @@
+﻿Fixing source highlighting, styling, minor changes to posts.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   _posts/2013-06-06-recreating-the-peg-game-at-cracker-barrel-in-html5.md
+#	modified:   _posts/2013-06-11-release-open-source-html5-games-on-the-windows-store.md
+#	modified:   assets/themes/twitter/css/highlightjs/github.css
+#	modified:   assets/themes/twitter/css/highlightjs/tomorrow.css
+#	modified:   assets/themes/twitter/css/style.css
+#	modified:   js/highlight.pack.js
+#
+
