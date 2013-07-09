@@ -7,6 +7,8 @@ tags: ["Markdown", "Open Source", "Git", "GitHub", "Notes", "Note Taking"]
 ---
 {% include JB/setup %}
 
+### Introduction
+
 In the past I have always taken heavy notes in my harder college courses (think
 things like Algorithms, Cal III, Operating Systems, etc) and have always felt
 like I would prefer to do so on the computer. Mostly because I want to know that
@@ -23,14 +25,17 @@ is no way I could keep up writing notes in class if I was worried about the
 formatting markup as well. I could always add it in after I took my notes, but
 I know I would never get around to doing it.
 
-Over the past year I have started using Markdown heavily and am absolutely in
-love with it. I try to do everything in Markdown. I am writing this post in
-Markdown. So the other day I thought about using it to write notes and how much
-formatting HTML I would get for free. Using a text editor that understands
-markdown will allow me to do it even easier. Not only that, but after a quick
-`git init` I'll get easy version control. Being in Markdown, I can push them
-up to GitHub and they'll take care of rendering the stuff to HTML to share with
-others. I also know it'll make my notes more safe, putting GitHub's data center
+### Coming Up With A Better Way
+
+Over the past year I have started using [Markdown][Markdown Wiki] heavily and
+am absolutely in love with it. I try to do everything in Markdown. I am writing
+this post in Markdown. So the other day I thought about using it to write notes
+and how much formatting HTML I would get for free. Using a text editor that
+understands markdown will allow me to do it even easier. Not only that, but
+after a quick `git init` I'll get easy version control. Being in Markdown, I
+can push my notes up to GitHub and they'll take care of rendering them to HTML
+for me so I know it can easily be shared with anyone who wants to learn from 
+them. I also know it'll make my notes more safe, putting GitHub's data center 
 redundancy to work. I feel like I'll be able to take notes more quickly in a
 light Markdown editor than I would in Word or Google Docs.
 
@@ -41,4 +46,7 @@ decided to do this as they were going into computer science or software
 engineering is that they would be able to show employers all the work they did
 and everything they learned first hand. I really wish I could do that. I don't
 think I can send in seven beat up old notebooks full of handwritten notes in
-with my resume.
+with my resume. Will try open sourcing all my notes for my network security
+course next semester for sure.
+
+[Markdown Wiki]: http://en.wikipedia.org/wiki/Markdown
