@@ -7,7 +7,7 @@ tags: ["Markdown", "Open Source", "Git", "GitHub", "Notes", "Note Taking"]
 ---
 {% include JB/setup %}
 
-### Introduction
+#### Introduction
 
 In the past I have always taken heavy notes in my harder college courses (think
 things like Algorithms, Cal III, Operating Systems, etc) and have always felt
@@ -25,7 +25,7 @@ is no way I could keep up writing notes in class if I was worried about the
 formatting markup as well. I could always add it in after I took my notes, but
 I know I would never get around to doing it.
 
-### Coming Up With A Better Way
+#### Coming Up With A Better Way
 
 Over the past year I have started using [Markdown][Markdown Wiki] heavily and
 am absolutely in love with it. I try to do everything in Markdown. I am writing
