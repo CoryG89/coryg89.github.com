@@ -15,6 +15,23 @@ ul ul, ol ol, ul ol, ol ul {
     margin-bottom: 5px;
 }
 
+a {
+    font-weight: bold;
+}
+
+a code {
+    color: #08c ;
+}
+
+a code:hover {
+    color: #005580;
+}
+
+a > code:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #d14;
+}
+
 /* Custom container */
 .container-narrow {
     margin: 0 auto;
