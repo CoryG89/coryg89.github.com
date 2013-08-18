@@ -34,10 +34,12 @@ Every extension must contain a file in the root directory with filename
 `manifest.json`. The manifest declares the name, version, permissions,
 configuration options, and other meta data associated with the extension.
 Manifest version 1 was deprecated in Chrome 18 and support will be phased out
-according to this schedule. If you are using an older extensions manifest as a
-guide you will want to make sure it includes the entry `"manifest_version": 2`.
+according to this [schedule][man-schedule]. If you are using an older extensions
+manifest as a guide you will want to make sure it includes the entry
+`"manifest_version": 2`.
 
-Google published a list of all fields supported in manifest version 2.
+Google has published a list of all the
+[fields supported in manifest version 2.][manifest-files].
 
 
 #### Background Pages
@@ -350,3 +352,5 @@ extension [MDNJump][mdnjump]. It's also available on GitHub at
 [mdnjump]: https://chrome.google.com/webstore/detail/mdnjump/mfjekjhknpjgpgchoghlemhgchpmkiha?hl=en-US
 [mdnjump-post]: ../../14/mdnjump-fastest-way-to-reference-mdn
 [mdnjump-repo]: https://github.com/CoryG89/MDNJump
+
+[man-schedule]: http://developer.chrome.com/extensions/manifestVersion.html#manifest-v1-support-schedule
