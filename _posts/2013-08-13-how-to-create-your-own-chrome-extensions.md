@@ -269,7 +269,7 @@ These replacement pages are specified declaratively in the extension's
 
 <pre><code class="text json">{
   "chrome_url_overrides": {
-    "bookmarks": "newBookmarkManager.html",
+    "bookmarks": "newBookmarkManager.html"
   }
 }</code></pre>
 
@@ -288,7 +288,7 @@ array of content script entries in `manifest.json` by specifying the
 <pre><code class="text json">{
   "content_scripts": [
     {
-      "matches": ["http://www.google.com/*",
+      "matches": ["http://www.google.com/*"],
       "css": ["custom-google-styles.css"],
       "js": ["custom-google-script-1.js", "custom-google-script-2.js"]
     },
