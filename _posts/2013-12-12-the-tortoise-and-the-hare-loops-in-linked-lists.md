@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Tortoise and The Hare: Loops in Linked Lists"
+displayTitle: "The Tortoise and The Hare &nbsp; <small>Loops in Linked Lists</small>"
 description: "Description of Flyod's Algorithm for detecting loops in linked lists, also known as the tortoise and the hare algorithm."
 category: "Technical"
 tags: ["C", "Java", Algorithms", "Interviews", "Jobs"]
