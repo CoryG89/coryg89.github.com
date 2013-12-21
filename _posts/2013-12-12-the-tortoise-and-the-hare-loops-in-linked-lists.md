@@ -66,7 +66,7 @@ int detectLoop(Node * list) {
         } while (j < i && scan = scan->next);
         i++;
     } while (current = current->next);
-    
+
     return 0;
 }
 ```
@@ -75,8 +75,8 @@ I had no access to a computer and was trying to come up with something on my
 own. I had never written a function to do this before. I think my answer was a
 bit complicated to describe over the phone and I think the interviewer probably
 had trouble understanding me completely. The interviewer told me we were out
-of time after I gave this answer. With a single google search of 
-*"loops linked lists"* I was able to figure out exactly the answer I should have
+of time after I gave this answer. With a single google search of *"loops in 
+linked lists"* I was able to figure out exactly the answer I should have
 given. I am a huge fan of StackOverflow and always find good information there
 that sometimes have been vetted by hundreds of programmers. Such was the case
 with [this question][so-question] that pointed me to 
@@ -100,9 +100,8 @@ int detectLoop(Node * list) {
     Node * hare = list;
 
     do {
-        if (!(hare = hare->next) || !(hare = hare->next)) {
+        if (!(hare = hare->next) || !(hare = hare->next))
             return 0;
-        }
         tortoise = tortoise->next;
     } while (tortoise != hare);
     
