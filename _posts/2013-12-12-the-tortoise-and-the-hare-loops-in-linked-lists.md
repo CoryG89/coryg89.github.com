@@ -45,8 +45,8 @@ int detectLoop(Node * list) {
 The problem with this one as my interviewer pointed out, is that it only detects
 circular linked lists, or lists that link back to the first node. I realized he
 was right and tried again. After a minute of fumbling around with the problem I
-came up with an inefficient solution (I believe it's `O(n^2)`) using a nested 
-loop:
+came up with an inefficient solution (which I believe is quadratic) using a
+nested loop:
 
 ```
 int detectLoop(Node * list) {
