@@ -5,7 +5,8 @@ displayTitle: "The Tortoise and The Hare"
 tagline: "Loops in Linked Lists"
 description: "Description of Flyod's Algorithm for detecting loops in linked lists, also known as the tortoise and the hare algorithm."
 category: "Technical"
-tags: ["C", "Java", Algorithms", "Interviews", "Jobs"]
+tags: ["C", "Java", "Algorithms", "Interviews", "Jobs", "Linked Lists"]
+highlights: true
 ---
 {% include JB/setup %}
 
@@ -26,9 +27,10 @@ at first, but eventually I understood it as:
 
 After I understood this I thought about it. So basically, it's a function that
 takes a linked list and tells you whether or not it's circular? Not quite. My 
-first attempt was a description of something like this:
+first attempt was a description of something like this. Looking back I was
+obviously nervous and rushing it.
 
-```cpp
+```
 /** Return true if a loop is found */
 int detectLoop(Node * list) {
     Node * current = list;
@@ -46,7 +48,7 @@ was right and tried again. After a minute of fumbling around with the problem I
 came up with an inefficient solution (I believe it's `O(n^2)`) using a nested 
 loop:
 
-```cpp
+```
 int detectLoop(Node * list) {
     if (list->next == NULL) return 0;
     Node * current = list->next;
@@ -82,10 +84,9 @@ The algorithm is absolutely brilliant and I had to write about it.
 The general idea is to have two pointers which you advance through the list
 at different rates. It can be shown that if there is a loop, then eventually
 both pointers will point to the same node. Not only will they eventually point
-to the same node, they will do so in O(n) steps. Here is my C code for the 
-algorithm:
+to the same node, they will do so in O(n) steps. Here is my C implementation:
 
-```cpp
+```
 int detectLoop(Node * list) {
     Node * tortoise = list;
     Node * hare = list;
@@ -107,8 +108,8 @@ algorithm:
  - If the list does not contain a loop, we will eventually hit `NULL` and return
    false. If incremented first, `hare` will always be `NULL` before `tortoise`.
  - If the list does contain a loop, then both pointers will end up in the loop
-   eventually. It is *not* possible for the pointers to meet before they enter the
-   loop.
+   eventually. It is *not* possible for the pointers to meet before they enter
+   the loop.
    - Assume the list *does* contain a loop of length *L*. At this point, I think 
      the simplest way to think about the algorithm at this point is to consider
      only the loop. Take the starting location of the loop to be node `0`.
@@ -117,12 +118,15 @@ algorithm:
      loop (ranging from node `0` to node `L-1`).
    - When the tortoise pointer enters the loop at node `0` we will consider the
      unknown location of the hare pointer to be an unknown number of steps `p`
-     *behind* the tortoise pointer in the loop and will eventually catch up to it. 
+     *behind* the tortoise pointer in the loop and will eventually catch up to 
+     it. 
    - Once entering the loop at node `0`, after `t` iterations the tortoise
-     pointer will be located at node `t mod L` and the hare pointer will be located at the node `(2t - p) mod L`.
+     pointer will be located at node `t mod L` and the hare pointer will be
+     located at the node `(2t - p) mod L`.
 
 Now if we create an equation using the above values, we can easily see that the
-hare pointer will catch up and meet the tortoise pointer after `t = p` iterations (after `tortoise` enters the loop). 
+hare pointer will catch up and meet the tortoise pointer after `t = p`
+iterations (after `tortoise` enters the loop). 
 
      2t - p = t   -->   2t = t + p  -->  t = p
 
@@ -131,8 +135,11 @@ prior to entering the loop plus the number of steps after entering the loop `p`.
 Although we do not know the value of `p`, we do have an upper bound (which is
 the important thing) and that is the length of the loop *L*. 
 
-If we want an upper bound on the overall number of iterations/steps for the algorithm, we can consider the number of nodes in the list as *N*, the number of nodes in the loop as *L*, and the number of nodes not contained in the loop as
-`K`. We then have an upper bound of `L + K = N` steps. Therefore, we do indeed have a linear algorithm for detecting loops in linked lists.
+If we want an upper bound on the overall number of iterations/steps for the
+algorithm, we can consider the number of nodes in the list as *N*, the number
+of nodes in the loop as *L*, and the number of nodes not contained in the loop
+as *K*. We then have an upper bound of `L + K = N` steps. Therefore, we do
+indeed have a linear-time algorithm for detecting loops in linked lists.
 
 [so-question]: http://stackoverflow.com/questions/2663115/how-to-detect-a-loop-in-a-linked-list
 [wiki-floyds-algorithm]: http://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare
