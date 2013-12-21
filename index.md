@@ -13,8 +13,8 @@ people actually use. I am also interested in things like: open platforms such as
 the Web, mobile applications, networking, graphics, physics, game development,
 and technology in general. I am the type that is interested in technology and
 its advancement for it's own sake, but I'd also like to make a real impact with
-my work. I feel the desire for my software to be used. I love learning to use
-new tools and technology, and I also have a passion for open source.
+my work. I have a strong desire for my software to be used. I love learning to 
+use new tools and technology, and I also have a passion for open source.
  
 I enjoy the startup atmosphere and could definitely see myself heading out to
 the Silicon Valley area after graduation. However, there are also larger tech

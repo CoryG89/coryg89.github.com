@@ -36,7 +36,7 @@ obviously nervous and rushing it.
 int detectLoop(Node * list) {
     Node * current = list;
     while (current = current->next) {
-        if (current == listNode)
+        if (current == list)
             return 1;
     }
     return 0;
@@ -134,7 +134,7 @@ algorithm:
 
 Now if we create an equation using the above values, we can easily see that the
 hare pointer will catch up and meet the tortoise pointer after `t = p`
-iterations (after `tortoise` enters the loop). 
+iterations (after the tortoise pointer enters the loop). 
 
      2t - p = t   -->   2t = t + p  -->  t = p
 
