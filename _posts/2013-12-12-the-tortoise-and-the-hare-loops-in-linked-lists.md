@@ -22,8 +22,9 @@ algorithm I didn't know about before so there's my silver lining. One of my
 problems was that I was having trouble understanding the question over the phone
 at first, but eventually I understood it as:
 
-> How would you write a function that takes as an argument a linked list? The
-> function should return true if the linked list has a loop, false otherwise.
+> How would you write a function that takes a linked list as an argument and
+> should return true if the linked list contains a loop, and return false 
+> otherwise.
 
 After I understood this I thought about it. So basically, it's a function that
 takes a linked list and tells you whether or not it's circular? Not quite. My 
