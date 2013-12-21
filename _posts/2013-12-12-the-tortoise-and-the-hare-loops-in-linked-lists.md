@@ -107,7 +107,8 @@ This is by no means a formal proof, but here is how I think about the above
 algorithm:
 
  - If the list does not contain a loop, we will eventually hit `NULL` and return
-   false. If incremented first, `hare` will always be `NULL` before `tortoise`.
+   false. If incremented first, the hare pointer will always be `NULL` before
+   the tortoise pointer.
  - If the list does contain a loop, then both pointers will end up in the loop
    eventually. It is *not* possible for the pointers to meet before they enter
    the loop.
