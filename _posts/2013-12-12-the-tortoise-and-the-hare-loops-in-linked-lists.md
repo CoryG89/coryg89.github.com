@@ -72,7 +72,7 @@ own. I had never written a function to do this before. I think my answer was a
 bit complicated to describe over the phone and I think the interviewer probably
 had trouble understanding me completely. The interviewer told me we were out
 of time after I gave this answer. With a single google search of 
-`'loops linked lists'` I was able to figure out exactly the answer I should have
+*"loops linked lists"* I was able to figure out exactly the answer I should have
 given. I am a huge fan of StackOverflow and always find good information there
 that sometimes have been vetted by hundreds of programmers. Such was the case
 with [this question][so-question] that pointed me to 
