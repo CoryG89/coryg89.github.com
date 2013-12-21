@@ -51,9 +51,12 @@ nested loop:
 
 ```
 int detectLoop(Node * list) {
-    if (list->next == NULL) return 0;
+    if (!list->next)
+        return 0;
+
     Node * current = list->next;
     int i = 0;
+
     do {
         Node * scan = list;
         int j = 0;
@@ -63,6 +66,7 @@ int detectLoop(Node * list) {
         } while (j < i && scan = scan->next);
         i++;
     } while (current = current->next);
+    
     return 0;
 }
 ```
@@ -89,6 +93,9 @@ to the same node, they will do so in O(n) steps. Here is my C implementation:
 
 ```
 int detectLoop(Node * list) {
+    if (!list) 
+        return 0;
+
     Node * tortoise = list;
     Node * hare = list;
 
