@@ -13,9 +13,9 @@ title : Cory Gross
 tagline: Let's build something.
 brandTitle: Cory Gross
 description: |
-  Personal blog, portfolio, and resume of Cory Gross. Technical topics including
-  software development, web and open technologies, mobile development, games,
-  graphics, math, and physics.
+  Personal blog, portfolio, and resume of Cory Gross. Technical topics include
+   software engineering, open source, web technologies, mobile development,
+   games, graphics, math, and physics.
 author :
   name : Cory Gross
   email : cmg0030@tigermail.auburn.edu
@@ -100,7 +100,7 @@ JB :
       num_posts: 5
       width: 580
       colorscheme: light
-   
+
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
   # Set 'provider' to false to turn analytics off globally.
@@ -142,7 +142,7 @@ JB :
       annotation : bubble
     linkedin :
       counter : right
-    
+
   # Settings for all other include helpers can be defined by creating 
   # a hash with key named for the given helper. ex:
   #
